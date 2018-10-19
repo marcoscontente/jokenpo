@@ -1,24 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Jokenpo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iua-0m-RHb">
+                                <rect key="frame" x="123.5" y="97.5" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="epz-gp-dvl"/>
+                                    <constraint firstAttribute="height" constant="128" id="hww-bf-zUq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Paper" image="paper"/>
+                                <connections>
+                                    <action selector="playPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rif-xj-fky"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGX-E6-bIx">
+                                <rect key="frame" x="22" y="269.5" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="SlN-0N-7M9"/>
+                                    <constraint firstAttribute="height" constant="128" id="bZY-i7-m5d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Rock" image="rock">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wJ2-N8-1E8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JOKENPÔ!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOf-ay-mx2">
+                                <rect key="frame" x="98.5" y="535" width="178" height="44"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="shadowColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8G-Hb-Ivs">
+                                <rect key="frame" x="217" y="269.5" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="NQx-Ai-H3T"/>
+                                    <constraint firstAttribute="width" constant="128" id="eso-da-Goa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                <state key="normal" title="Scissors" image="scissors"/>
+                                <connections>
+                                    <segue destination="IAU-fK-S84" kind="presentation" identifier="play" id="t1z-qG-R8A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iua-0m-RHb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2rP-J0-fBR"/>
+                            <constraint firstItem="q8G-Hb-Ivs" firstAttribute="top" secondItem="iua-0m-RHb" secondAttribute="bottom" constant="44" id="3Zg-Bc-Gem"/>
+                            <constraint firstItem="pOf-ay-mx2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OGq-N8-d5r"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="q8G-Hb-Ivs" secondAttribute="trailing" constant="30" id="Zy3-KT-Nad"/>
+                            <constraint firstItem="CGX-E6-bIx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="aGs-fD-EKI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pOf-ay-mx2" secondAttribute="bottom" constant="88" id="boE-zL-9XY"/>
+                            <constraint firstItem="q8G-Hb-Ivs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gwW-wR-NG8"/>
+                            <constraint firstItem="CGX-E6-bIx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tz3-Xd-Xcs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="cHt-eJ-lhL">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="IAU-fK-S84" customClass="ResultViewController" customModule="Jokenpo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ysR-h3-5qb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOl-a1-DcH">
+                                <rect key="frame" x="166" y="532" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pg7-Ag-7wm">
+                                <rect key="frame" x="98" y="597" width="179" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <state key="normal" title="PLAY AGAIN!">
+                                    <color key="titleColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgain:" destination="IAU-fK-S84" eventType="touchUpInside" id="mgl-af-SdX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kO0-8j-VOd">
+                                <rect key="frame" x="22" y="108" width="331" height="331"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vO0-uc-quZ">
+                                <rect key="frame" x="16" y="108" width="331" height="331"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="kO0-8j-VOd" firstAttribute="leading" secondItem="pNI-Kw-RiL" secondAttribute="leading" constant="22" id="10N-0I-Nl1"/>
+                            <constraint firstItem="hOl-a1-DcH" firstAttribute="top" secondItem="kO0-8j-VOd" secondAttribute="bottom" constant="93" id="BrY-Vh-7JL"/>
+                            <constraint firstItem="pNI-Kw-RiL" firstAttribute="trailing" secondItem="kO0-8j-VOd" secondAttribute="trailing" constant="22" id="TdP-7Q-g50"/>
+                            <constraint firstItem="hOl-a1-DcH" firstAttribute="centerX" secondItem="ysR-h3-5qb" secondAttribute="centerX" id="XYM-YK-Zrw"/>
+                            <constraint firstItem="kO0-8j-VOd" firstAttribute="top" secondItem="pNI-Kw-RiL" secondAttribute="top" constant="88" id="bBI-hn-Gs4"/>
+                            <constraint firstItem="pg7-Ag-7wm" firstAttribute="centerX" secondItem="ysR-h3-5qb" secondAttribute="centerX" id="mtJ-bN-s8Q"/>
+                            <constraint firstItem="pg7-Ag-7wm" firstAttribute="top" secondItem="hOl-a1-DcH" secondAttribute="bottom" constant="44" id="s8D-FR-KE1"/>
+                            <constraint firstItem="pNI-Kw-RiL" firstAttribute="bottom" secondItem="pg7-Ag-7wm" secondAttribute="bottom" constant="22" id="uU4-YS-fpT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pNI-Kw-RiL"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="vO0-uc-quZ" id="Gxw-KJ-Ljm"/>
+                        <outlet property="resultLabel" destination="hOl-a1-DcH" id="iZZ-8W-nPP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14s-dM-khQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853.60000000000002" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="paper" width="107" height="113"/>
+        <image name="rock" width="76" height="76"/>
+        <image name="scissors" width="81" height="119"/>
+    </resources>
 </document>
